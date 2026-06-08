@@ -6,19 +6,20 @@
 #include <BH1750.h>
 #include "DHT.h"
 #include <U8g2lib.h> // Biblioteca para o Display OLED 1.3"
+#include "secrets.h"
 
 // --- CONFIGURAÇÃO DO DISPLAY OLED 1.3" (SSH1106) ---
 U8G2_SH1106_128X64_NONAME_F_HW_I2C u8g2(U8G2_R0, /* reset=*/ U8X8_PIN_NONE);
 
 // --- CONFIGURAÇÕES DE REDE ---
-const char* ssid = "VISTEL";
-const char* password = "David1221!";
+const char* ssid = SECRET_SSID;
+const char* password = SECRET_PASS;
 
 // --- CONFIGURAÇÕES DO HIVEMQ CLOUD ---
-const char* mqtt_server = "e1533cd2d90943b2b0ee895d6a733562.s1.eu.hivemq.cloud"; 
+const char* mqtt_server = SECRET_URL_MQTT; 
 const int mqtt_port = 8883; 
-const char* mqtt_user = "d4vid";  
-const char* mqtt_pass = "David1221"; 
+const char* mqtt_user = SECRET_MQTT_USER;  
+const char* mqtt_pass = SECRET_MQTT_PASS;
 const char* mqtt_topic = "planta/sensores";
 
 // --- CONFIGURAÇÕES DOS SENSORES ---
